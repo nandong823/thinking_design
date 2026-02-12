@@ -1,3 +1,367 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Constrain center column width for better reading and margin note space
+article {
+  max-width: 45rem; // Narrows the center column
+}
+
+// Sophisticated Typography & Spacing
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--dark);
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+// Better spacing and readability
+article {
+  p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+}
+
+// Refined links
+a {
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--secondary);
+  }
+}
+
+// Sidebar refinement
+.sidebar {
+  padding: 1rem 0.8rem;
+}
+
+// Better visual hierarchy for the main title
+.page-title {
+  font-size: 2.2rem;
+  color: var(--dark);
+  letter-spacing: -0.8px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+// Card styling for explorer nav items (keep sidebar clean and minimal)
+.explorer-content {
+  ul li {
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.25rem;
+
+    &:hover {
+      background-color: var(--lightgray);
+    }
+
+    a {
+      display: block;
+    }
+  }
+}
+
+// Card styling for folder containers (keep sidebar clean)
+.folder-container {
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--lightgray);
+  }
+}
+
+// Margin notes (Quarto style) - true margin positioning
+.margin-note {
+  position: absolute;
+  right: -280px; // Position in the right margin
+  width: 250px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--darkgray);
+  background-color: transparent;
+  padding: 0.5rem 0;
+  margin: 0;
+
+  // Visual styling
+  .margin-note-content {
+    background-color: rgba(249, 251, 252, 0.6);
+    border-left: 3px solid var(--secondary);
+    padding: 0.75rem;
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+  }
+
+  p {
+    margin: 0.5rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    margin: 0.5rem 0;
+    padding-left: 1.25rem;
+
+    li {
+      margin-bottom: 0.25rem;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  code {
+    font-size: 0.8em;
+  }
+
+  a {
+    color: var(--secondary);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+  }
+}
+
+// Content wrapper needs to allow margin notes to escape
+.popover-hint {
+  position: relative;
+  overflow: visible;
+}
+
+article {
+  position: relative;
+  overflow: visible;
+}
+
+// Make sure content container allows absolute positioning
+.center {
+  position: relative;
+  overflow: visible;
+}
+
+// Graph positioning - flush against center column
+.sidebar.right {
+  padding-left: 0 !important;
+}
+
+// Mobile: show margin notes inline
+@media (max-width: 1400px) {
+  .margin-note {
+    position: static;
+    width: 100%;
+    right: auto;
+    background-color: #f9fbfc;
+    border: 1px solid #d0dfe8;
+    border-left: 4px solid var(--secondary);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+
+    .margin-note-content {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      backdrop-filter: none;
+    }
+  }
+}
+
+// Refined list styling in article content - subtle card styling
+article ul, article ol {
+  margin: 1.5rem 0;
+
+  li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background-color: #f9fbfc;
+    border: 1px solid #e0f0f5;
+
+    &:hover {
+      background-color: #f0f8fb;
+      border-color: var(--secondary);
+      box-shadow: 0 2px 6px rgba(13, 122, 143, 0.08);
+    }
+  }
+}
+
+// Code block refinement
+code {
+  background-color: var(--lightgray);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--secondary);
+}
+
+pre {
+  background-color: var(--lightgray) !important;
+  border: 1px solid #d0dfe8;
+  border-left: 4px solid var(--secondary);
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(13, 122, 143, 0.08);
+}
+
+// Card-like elements for better visual separation
+blockquote {
+  background-color: #f0f8fb;
+  padding: 1rem 1rem 1rem 1.25rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1.5rem;
+  color: var(--darkgray);
+  font-style: italic;
+  opacity: 0.95;
+  border-radius: 8px;
+  border: 1px solid #d0dfe8;
+  border-left: 4px solid var(--secondary);
+  box-shadow: 0 2px 8px rgba(13, 122, 143, 0.06);
+}
+
+// Section grid layout - 2x2 for main sections
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.section-card {
+  background-color: var(--light);
+  border: 1px solid #d0dfe8;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(13, 122, 143, 0.06);
+
+  &:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 4px 16px rgba(13, 122, 143, 0.12);
+    transform: translateY(-4px);
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.25rem;
+
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+
+      &:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+      a {
+        color: var(--secondary);
+        font-weight: 500;
+
+        &:hover {
+          color: var(--tertiary);
+        }
+      }
+    }
+  }
+}
+
+// Card-based layout for content cards
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.content-card {
+  background-color: var(--light);
+  border: 1px solid #d0dfe8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(13, 122, 143, 0.06);
+
+  &:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 4px 16px rgba(13, 122, 143, 0.12);
+    transform: translateY(-4px);
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--secondary);
+    font-size: 1.15rem;
+
+    a {
+      text-decoration: none;
+      color: var(--secondary);
+
+      &:hover {
+        color: var(--tertiary);
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    color: var(--darkgray);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}
