@@ -1,0 +1,1 @@
+https://docs.snowflake.com/en/user-guide/streams-intro#stream-columns

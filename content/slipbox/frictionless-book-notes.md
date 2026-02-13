@@ -5,8 +5,9 @@ tags:
 title: Frictionless - 7 Steps to Remove Barriers, Unlock Value, and Outpace Your Competition in the AI Era
 ---
 ## Why am I interested?
-- [I want to be impactful at my job]([[goal-be-impactful-at-work]])
+- [[goal-be-impactful-professionally|I want to be impactful at my job]]
 - I also encounter a lot of friction at work, ones that slows me down and prevent me from [enjoying my work]([[goal-enjoy-my-work]])
+- [[goal-be-valued-for-my-unique-lens|I like to cut through the noise]]
 
 
 ## Part I - Understanding DevEx

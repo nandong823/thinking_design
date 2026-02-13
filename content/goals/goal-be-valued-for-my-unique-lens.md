@@ -1,0 +1,1 @@
+I want to be seen/known for my unique perspective on things
