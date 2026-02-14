@@ -6,7 +6,7 @@ This is a blank Quartz installation.
 See the [documentation](https://quartz.jzhao.xyz) for how to get started.
 
 
-## [Slipbox](/slipbox)
+## [Slipbox](/content/slipbox)
 hello
 
 ## [Goals](/goals)
